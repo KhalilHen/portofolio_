@@ -1,5 +1,5 @@
 name: portofolio
-description: "A new Flutter project."
+description: 'A new Flutter project.'
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -31,10 +31,14 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  font_awesome_flutter: ^10.7.0
+  material_design_icons_flutter: ^7.0.7296
+  carousel_slider: ^5.0.0
+  flutter_svg: ^2.0.14
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:
@@ -52,12 +56,23 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
+  assets:
+    - assets/images/icons/laravel-color.svg
+    - assets/images/icons/react1.svg
+    - assets/images/icons/firebase.svg
+    - assets/images/icons/flutter-color.svg
+    - assets/images/icons/java-log.svg
+    - assets/images/icons/angular-icon.svg
+    - assets/images/icons/unity-color.svg
+    - assets/images/icons/godotengine-color.svg
+    - assets/images//icons/arduino-color.svg
+    - assets/images/test.png
+    - assets/images/sensei-sushi.png
+    # - lib/assets/images
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
