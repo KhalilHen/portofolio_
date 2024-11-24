@@ -7,15 +7,13 @@ class CarouselSliderController extends StatelessWidget {
   //   'https://cdn.pixabay',
   // ];
 
-  const CarouselSliderController({Key? key}) : super(key: key);
+  CarouselSliderController({super.key});
 
   @override
   Widget build(BuildContext context) {
     final List<String> imgList = [
-      // 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
-      // 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
-      // Image.asset('/assets/images/icons/angular-color.svg')
-
+      'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
+      'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
       'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
       'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
     ];
@@ -30,8 +28,7 @@ class CarouselSliderController extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: Image.network(
-                  // imgUrl,   original version
-                  imgUrl.toString(),
+                  imgUrl,
                   fit: BoxFit.cover,
                   width: 1000,
                 ),

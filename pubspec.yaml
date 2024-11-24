@@ -56,12 +56,9 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
-  uses-material-design: true
   assets:
-    - assets/images/icons/laravel-color.svg
+    # - assets/images/icons/laravel-color.svg
+    - assets/images/icons/
     - assets/images/icons/react1.svg
     - assets/images/icons/firebase.svg
     - assets/images/icons/flutter-color.svg
@@ -72,6 +69,16 @@ flutter:
     - assets/images//icons/arduino-color.svg
     - assets/images/test.png
     - assets/images/sensei-sushi.png
+    - assets/images/me.jpg
+    - assets/images/platformer/
+    - assets/images/index.png
+    - assets/images/dinner/
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design:
+    true
+
     # - lib/assets/images
   # To add assets to your application, add an assets section, like this:
   # assets:
