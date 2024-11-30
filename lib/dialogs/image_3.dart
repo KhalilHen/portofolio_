@@ -64,16 +64,18 @@ class _ImageDialogState extends State<ImageDialog> {
                   });
                 },
               )),
-          Positioned(
-            top: 80,
-            right: 20,
-            child: IconButton(
-              icon: const Icon(Icons.close, color: Colors.white, size: 28),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ),
+          isMobile
+              ? Positioned(
+                  top: 80,
+                  right: 20,
+                  child: IconButton(
+                    icon: const Icon(Icons.close, color: Colors.white, size: 28),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                )
+              : Container(),
           isMobile
               ? Container()
 

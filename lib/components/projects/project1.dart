@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:portofolio/dialogs/image_dialog.dart';
+import 'package:Khalil/dialogs/image_dialog.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:Khalil/l10n/l10n.dart';
 
 class Project1 extends StatelessWidget {
   final textColor = const Color(0xFFE0E0E0);
@@ -15,6 +16,10 @@ class Project1 extends StatelessWidget {
     //   'assets/images/index.png',
     //   'assets/images/image3.jpg',
     // ];
+
+
+    AppLocalizations l10n = AppLocalizationsX(context).l10n; //Localization
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: Container(
@@ -40,7 +45,7 @@ class Project1 extends StatelessWidget {
                         await showDialog(context: context, builder: (_) => ImageDialog());
                       },
                       child: Image.asset(
-                        'assets/images/dinner/login.jpg',
+                        '/images/dinner/login.jpg',
                         fit: BoxFit.cover,
                         width: double.infinity,
                       ),
@@ -56,8 +61,8 @@ class Project1 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           // Title Section
-                          const Text(
-                            'Dinner app (not finished)',
+                           Text(
+                            l10n.projectTitle1,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
@@ -111,9 +116,10 @@ class Project1 extends StatelessWidget {
                           Expanded(
                             child: Container(
                               margin: const EdgeInsets.symmetric(vertical: 12),
-                              child: SingleChildScrollView(
-                                child: const Text(
-                                  'Dinner App is a project designed to inspire users with meal ideas for today or help them create their own weekly meal planner by building personalized lists',
+                              child:  SingleChildScrollView(
+                                child:  Text(
+                                l10n.projectTitle1,
+
                                   style: TextStyle(
                                     color: Colors.white70,
                                     height: 1.5,
@@ -127,33 +133,7 @@ class Project1 extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              // Container(
-                              //   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                              //   decoration: BoxDecoration(
-                              //     border: Border.all(color: Colors.white30),
-                              //     borderRadius: BorderRadius.circular(8),
-                              //   ),
-                              //   child: Row(
-                              //     mainAxisSize: MainAxisSize.min,
-                              //     children: [
-                              //       const Icon(Icons.download, color: Colors.white70, size: 18),
-                              //       const SizedBox(width: 8),
-                              //       ElevatedButton(
-                              //         onPressed: () {
-
-                              //         },
-                              //         child: Text(
-                              //           'APK',
-                              //           style: const TextStyle(
-                              //             color: Colors.white70,
-                              //             fontSize: 14,
-                              //           ),
-                              //         ),
-                              //       ),
-                              //     ],
-                              //   ),
-                              // ),
-                              // SizedBox(width: 20),
+                              
                               InkWell(
                                 onTap: () {
                                   // Add your URL here
@@ -190,25 +170,9 @@ class Project1 extends StatelessWidget {
                 ],
               )
             : Row(
-                // mainAxisAlignment: MainAxisAlignment.center,
-                // crossAxisAlignment: CrossAxisAlignment.stretch,
+              
                 children: [
-                  //Image  side
-                  // Expanded(
-                  //   flex: 1,
-                  //   child: InkWell(
-                  //     onTap: () async {
-                  //       await showDialog(context: context, builder: (_) => ImageDialog());
-                  //     },
-                  //     child: Container(
-                  //       color: Colors.transparent,
-                  //       child: Image.asset(
-                  //         '/images/homepage_dinner_app.jpg',
-                  //         fit: BoxFit.contain,
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
+               
                   Expanded(
                     flex: 1,
                     child: Container(
@@ -281,11 +245,12 @@ class Project1 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           // Title Section
-                          const Row(
+                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                'Dinner app (not finished)',
+                            l10n.projectTitle1,
+
                                 style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 24, letterSpacing: 0.5),
                               ),
                             ],
@@ -335,8 +300,9 @@ class Project1 extends StatelessWidget {
                           Expanded(
                             child: Container(
                               margin: const EdgeInsets.symmetric(vertical: 12),
-                              child: const Text(
-                                'Dinner App is a project designed to inspire users with meal ideas for today or help them create their own weekly meal planner by building personalized lists',
+                              child:  Text(
+                                l10n.projectDescription1,
+
                                 style: TextStyle(
                                   color: Colors.white70,
                                   height: 1.5,
@@ -370,7 +336,6 @@ class Project1 extends StatelessWidget {
                               //     ],
                               //   ),
                               // ),
-                              // SizedBox(width: 20),
                               InkWell(
                                 onTap: () {
                                   // Add your URL here

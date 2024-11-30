@@ -46,7 +46,7 @@ class _ImageDialogState extends State<ImageDialog> {
                     borderRadius: BorderRadius.circular(8),
                     child: Image.network(
                       imgUrl,
-                      fit: isMobile ? BoxFit.contain : BoxFit.cover,
+                      fit: isMobile ? BoxFit.cover : BoxFit.cover,
                     ),
                   ),
                 );
@@ -67,7 +67,7 @@ class _ImageDialogState extends State<ImageDialog> {
           // Close Button - Positioned more responsively
           isMobile
               ? Positioned(
-                  top: isMobile ? 80 : null,
+                  top: isMobile ? 50 : null,
                   right: isMobile ? 0 : null,
                   child: IconButton(
                     icon: Icon(Icons.close, color: Colors.white, size: isMobile ? 24 : 28),

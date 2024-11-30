@@ -1,0 +1,21 @@
+{
+    "@@locale": "en",
+    "startText": "Hi i am Khalil",
+    "startSubtitle": "A Software Developer student at ROC-Nijmegen. Currently in my 3rd year of my 4-year study.",
+    "aboutMe": "About me",
+    "aboutMeDescription":  "Hi, my name is Khalil, and I’m an 18-year-old passionate developer with a keen interest in game development and app development. Currently, I’m expanding my expertise by learning Three.js and Godot 4, aiming to deepen my skills in creating interactive and immersive gaming experiences  I’m constantly exploring new technologies to enhance my knowledge and bring innovative ideas to life.",
+    "experience":  "Experience",
+    "experienceDescription": "Below, I've listed the various languages, frameworks, and tools I've worked with. To get a clearer picture of my skills, check out my projects and GitHub page by",
+    "experienceDescriptionHyperLink": "Click here!",
+    "project": "Projects",
+    "projectTitle0": "Platformer Learning Project",
+    "projectDescription0": "Platformer Learning Project is a project that I created to learn more about game development, and a introduction to unity. The project is a simple platformer game where the player can move left and right, jump, and collect powerups. The project isn’t perfect but it was great for learning the basics of game development and Unity.",
+    "projectTitle1": "Dinner app (not finished)",
+    "projectDescription1": "Dinner App is a project designed to inspire users with meal ideas for today or help them create their own weekly meal planner by building personalized lists",
+    "projectTitle2": "Geoprofs (in development)",
+    "projectDescription2": "Geoprofs is  a  leave system  for a  fictiv  geodesy bureau company  that use currently excel for there leave system Were we have to create a application, that fills his needs. The application is made with React and Laravel. The application is still in development"
+
+
+
+
+}
