@@ -1,0 +1,20 @@
+{
+    "@@locale": "nl",
+    "helloWorld":"Hallo wereld ",
+    "startText": "Hoi ik ben Khalil",
+    "startSubtitle": "Een software Developer student van ROC-Nijmegen momenteel zit ik in mijn 3de jaar van mijn  4 jaar opleiding",
+    "aboutMe": "Over mij",
+    "aboutMeDescription":  "Hallo, mijn naam is Khalil, en ik ben een 18-jarige gepassioneerde ontwikkelaar met een sterke interesse in game- en app-ontwikkeling. Momenteel breid ik mijn expertise uit door Three.js en Godot 4 te leren, met als doel mijn vaardigheden in het creëren van interactieve en meeslepende game-ervaringen te verdiepen. Ik ben constant op zoek naar nieuwe technologieën om mijn kennis te vergroten en innovatieve ideeën tot leven te brengen",
+    "experience": "Ervaring",
+    "experienceDescription":  "Hieronder heb ik de verschillende talen, frameworks, en tools opgesomd waarmee ik heb gewerkt. Om een beter beeld te krijgen van mijn vaardigheden check de projecten hier onder uit, en mijn Github pagina. ",
+    "experienceDescriptionHyperLink": "Klik hier!",
+    "project": "Projecten",
+    "projectTitle0":  "Platformer  oefen project",
+    "projectDescription0": "Platformer oefen project is een project dat ik heb gemaakt, om meer te weten te komen over game development. En een introductie voor mij tot Unity. De project is vrij simpel je hebt een player die kan zich vorotbewegen van links naar  rechts,  springen, en verschillende powerups oppakken.  De project is niet optimaal, maar het was een goede oefening on basis te leren van Unity, en game development. ",
+    "projectTitle1":  "maaltijden app (not finished)",
+    "projectDescription1":   "maaltijden app is een project ontworpen om de gebruiker inspiratie te geven. Voor hun avond eten doordmiddel van suggesties van verschillende gerechten, en de mogelijkheid om een eigen lijst te creëren ",
+    "projectTitle2": "Geoprofs (in development)",
+    "projectDescription2":   "Geoprofs is een verlofsysteem voor een fictief  landmeetkundige bureau   bedrijf dat momenteel excel gebruik voor hun verlofsysteem. Waarbij wij dus een  applicatie moeten maken ter vervanving van hun excel systeem. De project word gemaakt in React als front-end, en Laravel als back-end"
+
+
+}

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:portofolio/dialogs/image_3.dart';
+import 'package:Khalil/dialogs/image_3.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:Khalil/l10n/l10n.dart';
 
 class Project3 extends StatelessWidget {
   final textColor = const Color(0xFFE0E0E0);
@@ -10,6 +11,7 @@ class Project3 extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final bool isMobile = screenWidth < 800;
+    AppLocalizations l10n = AppLocalizationsX(context).l10n; //Localization
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
@@ -52,8 +54,8 @@ class Project3 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           // Title Section
-                          const Text(
-                            'Geoprofs',
+                           Text(
+                           l10n.projectTitle2,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
@@ -125,9 +127,9 @@ class Project3 extends StatelessWidget {
                             child: Container(
                               margin: const EdgeInsets.symmetric(vertical: 12),
                               child: SingleChildScrollView(
-                                child: const Text(
-                                  'Geoprofs is  a  leave system  for a  fictiv  geodesy bureau company  that use currently excel for there leave system' +
-                                      'Were we have to create a application, that fills his needs. The application is made with React and Laravel. The application is still in development',
+                                child:  Text(
+
+                                      l10n.projectDescription2,
                                   style: TextStyle(
                                     color: Colors.white70,
                                     height: 1.5,
@@ -190,7 +192,7 @@ class Project3 extends StatelessWidget {
                           null;
                         },
                         child: Image.asset(
-                          'assets/images/index.png',
+                          '/images/index.png',
                           fit: BoxFit.cover,
                         )),
                   ),
@@ -206,11 +208,11 @@ class Project3 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           // Title Section
-                          const Row(
+                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                'Geoprofs  (In  Development) ',
+                                l10n.projectTitle2,
                                 style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 24, letterSpacing: 0.5),
                               ),
                             ],
@@ -259,9 +261,9 @@ class Project3 extends StatelessWidget {
                           Expanded(
                             child: Container(
                               margin: const EdgeInsets.symmetric(vertical: 12),
-                              child: const Text(
-                                'Geoprofs is  a  leave system  for a  fictiv  geodesy bureau company  that use currently excel for there leave system' +
-                                    'Were we have to create a application, that fills his needs. The application is made with React and Laravel. The application is still in development',
+                              child:  Text(
+                                l10n.projectDescription2,
+
                                 style: TextStyle(
                                   color: Colors.white70,
                                   height: 1.5,

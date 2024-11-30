@@ -1,11 +1,30 @@
+import 'package:Khalil/components/projects/project1.dart';
+import 'package:Khalil/components/projects/project3.dart';
+import 'package:Khalil/components/projects/projects.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-import 'package:portofolio/components/projects/projects.dart';
-import 'package:portofolio/controllers/carouselSlider_controller.dart';
-import 'package:portofolio/components/projects/project1.dart';
-import 'package:portofolio/components/projects/project3.dart';
+// import 'package:Khalil/components/projects/projects.dart';
+import 'package:Khalil/controllers/carouselSlider_controller.dart';
+// import 'package:Khalil/components/projects/project1.dart';
+// import 'package:Khalil/components/projects/project3.dart';
+
+//Local langeauages package
+import 'package:url_launcher/url_launcher.dart';
+
+
+
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:Khalil/l10n/l10n.dart';
+
+//TODO Put this somewhere else
+extension AppLocalizationsX on BuildContext {
+  AppLocalizations get l10n => AppLocalizations.of(this);
+}
+
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -13,9 +32,15 @@ class HomePage extends StatelessWidget {
   final GlobalKey _experienceKey = GlobalKey();
   final GlobalKey _projectsKey = GlobalKey();
 
+
   var textColor = Colors.white;
   @override
   Widget build(BuildContext context) {
+
+
+        AppLocalizations l10n = AppLocalizationsX(context).l10n;
+
+
     final screenWidth = MediaQuery.of(context).size.width;
     final bool isMobile = screenWidth < 700;
     return Scaffold(
@@ -31,7 +56,10 @@ class HomePage extends StatelessWidget {
                   const Padding(padding: EdgeInsets.all(10)),
                   ListTile(
                     leading: const Icon(Icons.person, color: Colors.white),
-                    title: const Text('About Me', style: TextStyle(color: Colors.white)),
+                    title:  Text(
+                      l10n.aboutMe,
+                      
+                       style: TextStyle(color: Colors.white)),
                     onTap: () {
                       Navigator.pop(context);
                       Scrollable.ensureVisible(
@@ -43,7 +71,7 @@ class HomePage extends StatelessWidget {
                   ),
                   ListTile(
                     leading: const Icon(Icons.work, color: Colors.white),
-                    title: const Text('Experience', style: TextStyle(color: Colors.white)),
+                    title:  Text(l10n.experience, style: TextStyle(color: Colors.white)),
                     onTap: () {
                       Navigator.pop(context);
                       Scrollable.ensureVisible(
@@ -54,11 +82,11 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                   ListTile(
-                    //TODO Adjust later to the github icon
+                    //TODO Adjust later to the github iconaa
                     // icon: MdiIcons.github,
 
                     leading: const Icon(Icons.code, color: Colors.white),
-                    title: const Text('Projects', style: TextStyle(color: Colors.white)),
+                    title:  Text('Projects', style: TextStyle(color: Colors.white)),
                     onTap: () {
                       Navigator.pop(context);
                       Scrollable.ensureVisible(
@@ -90,8 +118,9 @@ class HomePage extends StatelessWidget {
                       curve: Curves.easeInOut,
                     );
                   },
-                  child: const Text(
-                    'About me',
+                  child:  Text(
+                      l10n.aboutMe,
+
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
@@ -103,8 +132,8 @@ class HomePage extends StatelessWidget {
                       curve: Curves.easeInOut,
                     );
                   },
-                  child: const Text(
-                    'Experience',
+                  child:  Text(
+                    l10n.experience,
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
@@ -121,6 +150,7 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
+             
               ],
       ),
       body: SingleChildScrollView(
@@ -148,7 +178,7 @@ class HomePage extends StatelessWidget {
                     FittedBox(
                       fit: BoxFit.scaleDown,
                       child: Text(
-                        'Hi, I am Khalil',
+                       l10n.startText,
                         style: TextStyle(
                           fontSize: isMobile ? 32 : 48,
                           fontWeight: FontWeight.bold,
@@ -165,7 +195,8 @@ class HomePage extends StatelessWidget {
                         maxWidth: isMobile ? screenWidth * 0.85 : 600,
                       ),
                       child: Text(
-                        'A Software Developer student at ROC-Nijmegen. Currently in my 3rd year of my 4-year study.',
+                        l10n.startSubtitle,
+                      
                         style: TextStyle(
                           fontSize: isMobile ? 16 : 20,
                           color: Colors.white.withOpacity(0.9),
@@ -185,15 +216,18 @@ class HomePage extends StatelessWidget {
               //About me sections
 
               isMobile
-                  ? SizedBox(
-                      height: 300,
+                  ? 
+                  
+                  SizedBox(
+                      height: 550,
                       child: Column(
                         key: _aboutMeKey,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            'About me',
+                            // 'About me',
+                            l10n.aboutMe,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
@@ -209,15 +243,25 @@ class HomePage extends StatelessWidget {
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                 alignment: Alignment.topCenter,
-                                image: AssetImage('/images/me.jpg'),
+
+                                //TODO When re
+                                image: AssetImage('assets/images/profile/me_0.jpg'),
+
+
                                 fit: BoxFit.cover,
                               ),
+
+                              // image: DecorationImage(
+                              //   image: NetworkImage('https://via.placeholder.com/150'),
+                              //   fit: BoxFit.cover,
+                              // ),
                             ),
                           ),
+                          SizedBox(height: 26),
                           Container(
                             padding: EdgeInsets.symmetric(horizontal: 16.0),
                             child: Text(
-                              'Hi, I am Khalil, and I am currently studying Software Developer (SD) at ROC Nijmegen in the Netherlands.',
+                    l10n.aboutMeDescription,
                               softWrap: true,
                               textAlign: TextAlign.center,
                               style: TextStyle(
@@ -231,44 +275,46 @@ class HomePage extends StatelessWidget {
                     )
                   : Row(
                       key: _aboutMeKey,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          width: 120,
-                          height: 120,
-                          decoration: const BoxDecoration(
+                          width: 150,
+                          height: 150,
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               image: DecorationImage(
-                                image: AssetImage('/images/me.jpg'),
-                                fit: BoxFit.cover,
-                                alignment: Alignment.topCenter, // Align the image to the top
+                              image: NetworkImage('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'),
+                              fit: BoxFit.cover,
+                              alignment: Alignment.topCenter, // Align the image to the center
+                              scale: 1.5, // Zoom in the image
                               )),
                         ),
-
-                        const SizedBox(width: 20),
+// 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'
+                        // const SizedBox(width: 20),
 
                         //Text container
 
                         Container(
-                          height: 200,
+                          height: 300,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              const Text('About me', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white)),
+                               Text(l10n.aboutMe, style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white)),
                               const SizedBox(height: 10),
                               Container(
-                                width: 300, // Adjust width as needed
-                                child: const Text(
-                                  'Hi, I am Khalil, and I am currently studying Software Developer (SD) at ROC Nijmegen in the Netherlands.',
+                                width: 320, // Adjust width as needed
+                                child:  Text(
+                                                      l10n.aboutMeDescription,
+
                                   style: TextStyle(fontSize: 15, color: Colors.white),
                                   softWrap: true,
                                 ),
                               ),
                             ],
                           ),
-                        )
+                        ),
                       ],
                     ),
               const SizedBox(
@@ -280,29 +326,62 @@ class HomePage extends StatelessWidget {
                   ? Container(
                       key: _experienceKey,
                       height: 300,
-                      child: const Column(
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          const Text(
-                            'Experience',
+                           Text(
+                            l10n.experience,
                             style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                             ),
                           ),
-                          const Text(
+                          // const Text(
+                          //   softWrap: true,
+                          //   textAlign: TextAlign.center,
+                          //   'Below, I\'ve listed the various languages, frameworks, and tools I\'ve worked with. To get a clearer picture of my skills, check out my projects and GitHub page by clicking here',
+                          //   style: TextStyle(
+                          //     fontSize: 15,
+                          //     fontWeight: FontWeight.bold,
+                          //     color: Colors.white,
+                          //   ),
+                          // ),
+
+                          RichText(
                             softWrap: true,
                             textAlign: TextAlign.center,
-                            'Here under i have listed different langeauages and frameworks i have worked with, and other programs/engines. ' +
-                                '   But to get the the best idea of my skills check my projects and my github page   click here',
-                            style: TextStyle(
+                            strutStyle: StrutStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
                             ),
-                          ),
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text:
+                                  l10n.experienceDescription,
+                                     
+                                  style: TextStyle(
+                                    color: textColor,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text: l10n.experienceDescriptionHyperLink,
+                                  style: TextStyle(
+                                    color: Colors.blue,
+                                    decoration: TextDecoration.underline,
+                                  ),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () {
+                                      launch('https://github.com/KhalilHen');
+                                    },
+                                ),
+                              ],
+                            ),
+                          )
                         ],
                       ),
                     )
@@ -317,8 +396,8 @@ class HomePage extends StatelessWidget {
                             children: [
                               //experiernce
 
-                              const Text(
-                                'Experience',
+                              Text(
+                               l10n.experience,
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -328,18 +407,47 @@ class HomePage extends StatelessWidget {
 
                               Container(
                                 width: 400,
-                                child: const Wrap(
+                                child: Wrap(
                                   alignment: WrapAlignment.center,
                                   children: [
-                                    Text(
-                                      'Here under i have listed different langeauages and frameworks i have worked with, and other programs/engines. ' +
-                                          ' But to get the the best idea of my skills check my projects and my github page   click here',
-                                      style: TextStyle(
+                                    // Text(
+                                    //   'Here under i have listed different langeauages and frameworks i have worked with, and other programs/engines. ' +
+                                    //       ' But to get the the best idea of my skills check my projects and my github page   click here',
+                                    //   style: TextStyle(
+                                    //     fontSize: 15,
+                                    //     fontWeight: FontWeight.bold,
+                                    //     color: Colors.white,
+                                    //   ),
+                                    // ),
+
+                                    RichText(
+                                      softWrap: true,
+                                      textAlign: TextAlign.center,
+                                      strutStyle: StrutStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.white,
                                       ),
-                                    ),
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text:
+                                              l10n.experienceDescription,
+                                            style: TextStyle(color: textColor),
+                                          ),
+                                          TextSpan(
+                                            text: l10n.experienceDescriptionHyperLink,
+                                            style: TextStyle(
+                                              color: Colors.blue,
+                                              decoration: TextDecoration.underline,
+                                            ),
+                                            recognizer: TapGestureRecognizer()
+                                              ..onTap = () {
+                                                launch('https://github.com/KhalilHen');
+                                              },
+                                          ),
+                                        ],
+                                      ),
+                                    )
                                   ],
                                 ),
                               ),
@@ -366,7 +474,7 @@ class HomePage extends StatelessWidget {
                                   height: 50,
                                   width: 50,
                                 ),
-                                SizedBox(height: 8.0),
+                                SizedBox(height: 12.0),
                                 Text('React', style: TextStyle(color: textColor)),
                               ],
                             ),
@@ -377,9 +485,9 @@ class HomePage extends StatelessWidget {
                                   height: 50,
                                   width: 50,
                                 ),
-                                SizedBox(height: 8.0),
+                                SizedBox(height: 12.0),
                                 Text(
-                                  'React',
+                                  'Firebase',
                                   style: TextStyle(color: textColor),
                                 ),
                               ],
@@ -391,7 +499,7 @@ class HomePage extends StatelessWidget {
                                   height: 50,
                                   width: 50,
                                 ),
-                                SizedBox(height: 8.0),
+                                SizedBox(height: 12.0),
                                 Text(
                                   'Laravel',
                                   style: TextStyle(color: textColor),
@@ -459,6 +567,11 @@ class HomePage extends StatelessWidget {
                                   height: 50,
                                   width: 50,
                                 ),
+                                SizedBox(height: 12.0),
+                                Text(
+                                  'Godot',
+                                  style: TextStyle(color: textColor),
+                                )
                               ],
                             ),
                           ],
@@ -481,7 +594,7 @@ class HomePage extends StatelessWidget {
                                   width: 65,
                                 ),
 
-                                SizedBox(height: 8.0), // Spacing between image and text
+                                SizedBox(height: 12.0), // Spacing between image and text
                                 Text('React', style: TextStyle(color: textColor)),
                               ],
                             ),
@@ -492,7 +605,7 @@ class HomePage extends StatelessWidget {
                                   width: 65,
                                   height: 65,
                                 ),
-                                SizedBox(height: 8.0),
+                                SizedBox(height: 12.0),
                                 Text(
                                   'React',
                                   style: TextStyle(color: textColor),
@@ -502,11 +615,12 @@ class HomePage extends StatelessWidget {
                             Column(
                               children: [
                                 SvgPicture.asset(
-                                  '/images/icons/laravel-color.svg',
+                                  'assets/images/icons/laravel-color.svg',
                                   width: 65,
                                   height: 65,
+                                  // image: AssetImage('assets/images/me.jpg'),
                                 ),
-                                SizedBox(height: 8.0),
+                                SizedBox(height: 12.0),
                                 Text(
                                   'Laravel',
                                   style: TextStyle(color: textColor),
@@ -609,7 +723,7 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('Projects',
+                    Text(l10n.project,
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -618,17 +732,20 @@ class HomePage extends StatelessWidget {
                     Padding(padding: EdgeInsets.all(25)),
 
                     //project instance
-                    Projects(),
+                    Projects(), 
                     Padding(padding: EdgeInsets.all(25)),
 
                     Project1(),
                     Padding(padding: EdgeInsets.all(25)),
                     Project3(),
-                    // CarouselSliderController()
+                    // CarouselSliderController()import 'package:portofolio/components/projects/project1.dart';
+                  
                   ],
                 ),
               ),
               Padding(padding: EdgeInsets.all(25)),
+
+              //
             ],
           ),
         ),

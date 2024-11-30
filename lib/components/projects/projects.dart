@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:portofolio/dialogs/image_2.dart';
+import 'package:Khalil/dialogs/image_2.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:Khalil/l10n/l10n.dart';
 
 class Projects extends StatelessWidget {
   final textColor = const Color(0xFFE0E0E0);
@@ -15,6 +16,7 @@ class Projects extends StatelessWidget {
     ];
     final screenWidth = MediaQuery.of(context).size.width;
     final bool isMobile = screenWidth < 800;
+    AppLocalizations l10n = AppLocalizationsX(context).l10n; //Localization
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
@@ -41,7 +43,7 @@ class Projects extends StatelessWidget {
                         await showDialog(context: context, builder: (_) => ImageDialog());
                       },
                       child: Image.asset(
-                        '/images//platformer/level_1.png',
+                        '/images/platformer/level_1.png',
                         fit: BoxFit.cover,
                         width: double.infinity,
                       ),
@@ -57,9 +59,9 @@ class Projects extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           // Title Section
-                          const Text(
-                            'Platformer Learning Project',
-                            style: TextStyle(
+                           Text(
+                                l10n.projectTitle0,
+                            style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                               fontSize: 24,
@@ -113,9 +115,10 @@ class Projects extends StatelessWidget {
                             child: Container(
                               margin: const EdgeInsets.symmetric(vertical: 12),
                               child: SingleChildScrollView(
-                                child: const Text(
-                                  'Platformer Learning Project is a project that I created to learn more about game development, and a introduction to unity. The project is a simple platformer game where the player can move left and right, jump, and collect powerups.' +
-                                      'The project isn’t perfect but it was great for learning the basics of game development and I plan to continue to work on it in the future.',
+                                child:  Text(
+
+                                 l10n.projectDescription0,
+
                                   style: TextStyle(
                                     color: Colors.white70,
                                     height: 1.5,
@@ -179,7 +182,7 @@ class Projects extends StatelessWidget {
                           null;
                         },
                         child: Image.asset(
-                          'assets/images/platformer/level_1.png',
+                          '/images/platformer/level_1.png',
                           fit: BoxFit.cover,
                         )),
                   ),
@@ -195,11 +198,11 @@ class Projects extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           // Title Section
-                          const Row(
+                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                'Platformer Learning Project',
+                                l10n.projectTitle0,
                                 style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 24, letterSpacing: 0.5),
                               ),
                             ],
@@ -250,9 +253,9 @@ class Projects extends StatelessWidget {
                               margin: const EdgeInsets.symmetric(vertical: 12),
 
                               //TODO Create variable to easier adjust text
-                              child: const Text(
-                                'Platformer Learning Project is a project that I created to learn more about game development, and a introduction to unity. The project is a simple platformer game where the player can move left and right, jump, and collect powerups.' +
-                                    'The project isn’t perfect but it was great for learning the basics of game development and I plan to continue to work on it in the future.',
+                              child:  Text(
+                                l10n.projectDescription0,
+
                                 style: TextStyle(
                                   color: Colors.white70,
                                   height: 1.5,
