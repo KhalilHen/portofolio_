@@ -20,6 +20,9 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:Khalil/l10n/l10n.dart';
 
+
+
+import 'package:google_fonts/google_fonts.dart';  //fonts
 //TODO Put this somewhere else
 extension AppLocalizationsX on BuildContext {
   AppLocalizations get l10n => AppLocalizations.of(this);
@@ -59,7 +62,7 @@ class HomePage extends StatelessWidget {
                     title:  Text(
                       l10n.aboutMe,
                       
-                       style: TextStyle(color: Colors.white)),
+                       style:  TextStyle(color: Colors.white)),
                     onTap: () {
                       Navigator.pop(context);
                       Scrollable.ensureVisible(
@@ -86,7 +89,7 @@ class HomePage extends StatelessWidget {
                     // icon: MdiIcons.github,
 
                     leading: const Icon(Icons.code, color: Colors.white),
-                    title:  Text('Projects', style: TextStyle(color: Colors.white)),
+                    title:  Text('Projects', style: TextStyle(color: Colors.white,)),
                     onTap: () {
                       Navigator.pop(context);
                       Scrollable.ensureVisible(
@@ -179,10 +182,10 @@ class HomePage extends StatelessWidget {
                       fit: BoxFit.scaleDown,
                       child: Text(
                        l10n.startText,
-                        style: TextStyle(
+                        style: GoogleFonts.lato(
                           fontSize: isMobile ? 32 : 48,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: textColor,
                           height: 1.2,
                         ),
                       ),
@@ -197,10 +200,11 @@ class HomePage extends StatelessWidget {
                       child: Text(
                         l10n.startSubtitle,
                       
-                        style: TextStyle(
+                        style: GoogleFonts.openSans(
                           fontSize: isMobile ? 16 : 20,
                           color: Colors.white.withOpacity(0.9),
                           height: 1.5,
+                    fontWeight: FontWeight.w300,
                           letterSpacing: 0.5,
                         ),
                       ),
@@ -228,7 +232,7 @@ class HomePage extends StatelessWidget {
                           Text(
                             // 'About me',
                             l10n.aboutMe,
-                            style: TextStyle(
+                            style:  GoogleFonts.lato(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                               fontSize: isMobile ? 32 : 48,
@@ -264,9 +268,10 @@ class HomePage extends StatelessWidget {
                     l10n.aboutMeDescription,
                               softWrap: true,
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: GoogleFonts.openSans(
                                 color: textColor,
                                 fontSize: isMobile ? 16 : 20,
+                                fontWeight: FontWeight.w300,
                               ),
                             ),
                           ),
@@ -284,7 +289,8 @@ class HomePage extends StatelessWidget {
                             decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               image: DecorationImage(
-                              image: NetworkImage('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'),
+                                image: AssetImage('assets/images/profile/me_0.jpg'),
+
                               fit: BoxFit.cover,
                               alignment: Alignment.topCenter, // Align the image to the center
                               scale: 1.5, // Zoom in the image
@@ -301,15 +307,27 @@ class HomePage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                               Text(l10n.aboutMe, style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white)),
+                               Text(l10n.aboutMe, 
+                               
+                               //TODO Change the font into a global variable
+                               style: GoogleFonts.lato(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
+                               
+                               
+                               ),
+
+
                               const SizedBox(height: 10),
                               Container(
                                 width: 320, // Adjust width as needed
-                                child:  Text(
-                                                      l10n.aboutMeDescription,
-
-                                  style: TextStyle(fontSize: 15, color: Colors.white),
+                                     child: Text(
+                                  l10n.aboutMeDescription,
                                   softWrap: true,
+                                  textAlign: TextAlign.left,
+                                  style: GoogleFonts.openSans(
+                                    color: textColor,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w300,
+                                  ),
                                 ),
                               ),
                             ],
@@ -332,10 +350,11 @@ class HomePage extends StatelessWidget {
                         children: [
                            Text(
                             l10n.experience,
-                            style: TextStyle(
-                              fontSize: 15,
+                            style:  GoogleFonts.lato(
+                              fontSize: isMobile ? 32 : 48,
+
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: textColor,
                             ),
                           ),
                           // const Text(
@@ -362,10 +381,10 @@ class HomePage extends StatelessWidget {
                                   text:
                                   l10n.experienceDescription,
                                      
-                                  style: TextStyle(
+                                  style: GoogleFonts.openSans(
                                     color: textColor,
                                     fontSize: 15,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.w300,
                                   ),
                                 ),
                                 TextSpan(
@@ -398,8 +417,9 @@ class HomePage extends StatelessWidget {
 
                               Text(
                                l10n.experience,
-                                style: TextStyle(
-                                  fontSize: 20,
+                                style: GoogleFonts.lato(
+                                fontSize: 30,
+
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 ),
@@ -432,7 +452,14 @@ class HomePage extends StatelessWidget {
                                           TextSpan(
                                             text:
                                               l10n.experienceDescription,
-                                            style: TextStyle(color: textColor),
+                                            style: GoogleFonts.openSans(color: textColor,
+                                              fontSize: 15,
+
+                                              //TODO Collect feedback for this
+                                             fontWeight:  FontWeight.w300,
+                                             // fontWeight: FontWeight.normal,
+
+                                            ),
                                           ),
                                           TextSpan(
                                             text: l10n.experienceDescriptionHyperLink,
@@ -481,7 +508,7 @@ class HomePage extends StatelessWidget {
                             Column(
                               children: [
                                 SvgPicture.asset(
-                                  '/images/icons/firebase.svg',
+                                  '/images/icons/firbase-color.svg',
                                   height: 50,
                                   width: 50,
                                 ),
@@ -492,27 +519,27 @@ class HomePage extends StatelessWidget {
                                 ),
                               ],
                             ),
+                //TODO  Fix the laravel icon until that time commented out. 
+                            // Column(
+                            //   children: [
+                            //     SvgPicture.asset(
+                            //       '/images/icons/laravel-color.svg',
+                            //       height: 50,
+                            //       width: 50,
+                            //     ),
+                            //     SizedBox(height: 12.0),
+                            //     Text(
+                            //       'Laravel',
+                            //       style: TextStyle(color: textColor),
+                            //     ),
+                            //   ],
+                            // ),
                             Column(
                               children: [
-                                SvgPicture.asset(
-                                  '/images/icons/laravel-color.svg',
-                                  height: 50,
-                                  width: 50,
-                                ),
-                                SizedBox(height: 12.0),
-                                Text(
-                                  'Laravel',
-                                  style: TextStyle(color: textColor),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                SvgPicture.asset(
-                                  '/images/icons/flutter-color.svg',
-                                  height: 50,
-                                  width: 50,
-                                ),
+                               FlutterLogo(
+                                size: 50,
+                                
+                              ),
                                 SizedBox(height: 12.0),
                                 Text('Flutter', style: TextStyle(color: textColor)),
                               ],
@@ -563,7 +590,8 @@ class HomePage extends StatelessWidget {
                             Column(
                               children: [
                                 SvgPicture.asset(
-                                  '/images/icons/godotengine-color.svg',
+
+                                  'assets/images/icons/godot_color.svg',
                                   height: 50,
                                   width: 50,
                                 ),
@@ -601,40 +629,43 @@ class HomePage extends StatelessWidget {
                             Column(
                               children: [
                                 SvgPicture.asset(
+
                                   '/images/icons/firebase.svg',
+
                                   width: 65,
                                   height: 65,
                                 ),
-                                SizedBox(height: 12.0),
+                                SizedBox(height: 13.0),
                                 Text(
-                                  'React',
+                                  'Firebase ',
                                   style: TextStyle(color: textColor),
                                 ),
                               ],
                             ),
+                            // Column(
+                            //   children: [
+                            //     SvgPicture.asset(
+                            //       'assets/images/icons/laravel-color.svg',
+                            //       width: 65,
+                            //       height: 65,
+                            //       // image: AssetImage('assets/images/me.jpg'),
+                            //     ),
+                            //     SizedBox(height: 12.0),
+                            //     Text(
+                            //       'Laravel',
+                            //       style: TextStyle(color: textColor),
+                            //     ),
+                            //   ],
+                            // ),
                             Column(
                               children: [
-                                SvgPicture.asset(
-                                  'assets/images/icons/laravel-color.svg',
-                                  width: 65,
-                                  height: 65,
-                                  // image: AssetImage('assets/images/me.jpg'),
-                                ),
-                                SizedBox(height: 12.0),
-                                Text(
-                                  'Laravel',
-                                  style: TextStyle(color: textColor),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                SvgPicture.asset(
-                                  '/images/icons/flutter-color.svg',
-                                  width: 65,
-                                  height: 65,
-                                ),
-                                SizedBox(height: 12.0),
+                              FlutterLogo(
+                                size: 65,
+                                
+                              ),
+
+
+                                SizedBox(height: 14.0),
                                 Text('Flutter', style: TextStyle(color: textColor)),
                               ],
                             ),
@@ -684,7 +715,7 @@ class HomePage extends StatelessWidget {
                             Column(
                               children: [
                                 SvgPicture.asset(
-                                  '/images/icons/godotengine-color.svg',
+                                  'assets/images/icons/godot_color.svg',
                                   width: 65,
                                   height: 65,
                                 ),
@@ -724,8 +755,8 @@ class HomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(l10n.project,
-                        style: TextStyle(
-                          fontSize: 20,
+                        style: GoogleFonts.lato(
+                          fontSize: 30,
                           fontWeight: FontWeight.bold,
                           color: textColor,
                         )),

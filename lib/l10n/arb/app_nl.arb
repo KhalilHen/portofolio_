@@ -10,11 +10,11 @@
     "experienceDescriptionHyperLink": "Klik hier!",
     "project": "Projecten",
     "projectTitle0":  "Platformer  oefen project",
-    "projectDescription0": "Platformer oefen project is een project dat ik heb gemaakt, om meer te weten te komen over game development. En een introductie voor mij tot Unity. De project is vrij simpel je hebt een player die kan zich vorotbewegen van links naar  rechts,  springen, en verschillende powerups oppakken.  De project is niet optimaal, maar het was een goede oefening on basis te leren van Unity, en game development. ",
+    "projectDescription0": "Platformer oefen project is een project dat ik heb gemaakt, om meer te weten te komen over game development. En een introductie voor mij tot Unity. De project is vrij simpel je hebt een player die kan zich voortbewegen van links naar  rechts,  springen, en verschillende powerups oppakken.  De project is niet optimaal, maar het was een goede oefening om de  basis te leren van Unity, en game development. ",
     "projectTitle1":  "maaltijden app (not finished)",
     "projectDescription1":   "maaltijden app is een project ontworpen om de gebruiker inspiratie te geven. Voor hun avond eten doordmiddel van suggesties van verschillende gerechten, en de mogelijkheid om een eigen lijst te creëren ",
     "projectTitle2": "Geoprofs (in development)",
-    "projectDescription2":   "Geoprofs is een verlofsysteem voor een fictief  landmeetkundige bureau   bedrijf dat momenteel excel gebruik voor hun verlofsysteem. Waarbij wij dus een  applicatie moeten maken ter vervanving van hun excel systeem. De project word gemaakt in React als front-end, en Laravel als back-end"
+    "projectDescription2":   "Geoprofs is een verlofsysteem voor een fictief  landmeetkundige bureau   bedrijf dat momenteel excel gebruik voor hun verlofsysteem. Waarbij wij dus een  applicatie moeten maken ter vervanging van hun excel systeem. De project word gemaakt in React als front-end, en Laravel als back-end"
 
 
 }

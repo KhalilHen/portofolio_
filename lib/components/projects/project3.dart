@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:Khalil/dialogs/image_3.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:Khalil/l10n/l10n.dart';
+import 'package:google_fonts/google_fonts.dart';  //fonts
 
 class Project3 extends StatelessWidget {
   final textColor = const Color(0xFFE0E0E0);
@@ -130,9 +131,11 @@ class Project3 extends StatelessWidget {
                                 child:  Text(
 
                                       l10n.projectDescription2,
-                                  style: TextStyle(
+                                  style:  GoogleFonts.openSans(
                                     color: Colors.white70,
+                                    fontWeight: FontWeight.w300,
                                     height: 1.5,
+                                    
                                   ),
                                 ),
                               ),
@@ -264,8 +267,9 @@ class Project3 extends StatelessWidget {
                               child:  Text(
                                 l10n.projectDescription2,
 
-                                style: TextStyle(
+                                style:  GoogleFonts.openSans(
                                   color: Colors.white70,
+                                  fontWeight: FontWeight.w300,
                                   height: 1.5,
                                 ),
                               ),

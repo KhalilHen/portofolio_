@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:Khalil/dialogs/image_dialog.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:Khalil/l10n/l10n.dart';
+import 'package:google_fonts/google_fonts.dart';  //fonts
 
 class Project1 extends StatelessWidget {
   final textColor = const Color(0xFFE0E0E0);
@@ -63,7 +64,7 @@ class Project1 extends StatelessWidget {
                           // Title Section
                            Text(
                             l10n.projectTitle1,
-                            style: TextStyle(
+                            style: GoogleFonts.lato(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                               fontSize: 24,
@@ -118,11 +119,13 @@ class Project1 extends StatelessWidget {
                               margin: const EdgeInsets.symmetric(vertical: 12),
                               child:  SingleChildScrollView(
                                 child:  Text(
-                                l10n.projectTitle1,
+                                l10n.projectDescription1,
 
-                                  style: TextStyle(
+                                  style: GoogleFonts.openSans(
                                     color: Colors.white70,
                                     height: 1.5,
+                                    fontWeight: FontWeight.w300,
+                                    
                                   ),
                                 ),
                               ),
@@ -251,7 +254,11 @@ class Project1 extends StatelessWidget {
                               Text(
                             l10n.projectTitle1,
 
-                                style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 24, letterSpacing: 0.5),
+                                style: GoogleFonts.lato(
+                                  
+                                  
+                                  fontWeight: FontWeight.bold, color: Colors.white, fontSize: 24, letterSpacing: 0.5,
+                                ),
                               ),
                             ],
                           ),
@@ -303,8 +310,10 @@ class Project1 extends StatelessWidget {
                               child:  Text(
                                 l10n.projectDescription1,
 
-                                style: TextStyle(
+                                style: GoogleFonts.openSans(
                                   color: Colors.white70,
+                                    // color: textColor,
+                                       fontWeight: FontWeight.w300,
                                   height: 1.5,
                                 ),
                               ),

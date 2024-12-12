@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:Khalil/dialogs/image_2.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:Khalil/l10n/l10n.dart';
 
@@ -61,8 +62,8 @@ class Projects extends StatelessWidget {
                           // Title Section
                            Text(
                                 l10n.projectTitle0,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
+                            style:  GoogleFonts.openSans(
+                              fontWeight: FontWeight.w400,
                               color: Colors.white,
                               fontSize: 24,
                               letterSpacing: 0.5,
@@ -119,8 +120,10 @@ class Projects extends StatelessWidget {
 
                                  l10n.projectDescription0,
 
-                                  style: TextStyle(
+                                  style: GoogleFonts.openSans(
                                     color: Colors.white70,
+                                                                        fontWeight: FontWeight.w300,
+
                                     height: 1.5,
                                   ),
                                 ),
@@ -256,9 +259,11 @@ class Projects extends StatelessWidget {
                               child:  Text(
                                 l10n.projectDescription0,
 
-                                style: TextStyle(
+                                style: GoogleFonts.openSans(
                                   color: Colors.white70,
                                   height: 1.5,
+                                                                      fontWeight: FontWeight.w300,
+
                                 ),
                               ),
                             ),
